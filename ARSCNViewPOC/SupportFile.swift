@@ -23,7 +23,7 @@ class SphereNode: SCNNode {
     override init() {
         super.init()
         geometry = sphereGeometry
-        sphereGeometry.radius = 0.015
+        sphereGeometry.radius = 0.05
         self.name = "first"
     }
     

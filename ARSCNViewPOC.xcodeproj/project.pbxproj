@@ -15,6 +15,7 @@
 		68B9086D293744F70051A571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B9086C293744F70051A571 /* Assets.xcassets */; };
 		68B90870293744F70051A571 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68B9086E293744F70051A571 /* LaunchScreen.storyboard */; };
 		68B9087829375EC60051A571 /* SupportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B9087729375EC60051A571 /* SupportFile.swift */; };
+		68D16CB32940ADB100B9F4B0 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D16CB22940ADB100B9F4B0 /* SpriteKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		68B9086F293744F70051A571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68B90871293744F70051A571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68B9087729375EC60051A571 /* SupportFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportFile.swift; sourceTree = "<group>"; };
+		68D16CB22940ADB100B9F4B0 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D16CB32940ADB100B9F4B0 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			children = (
 				68B9085F293744F50051A571 /* ARSCNViewPOC */,
 				68B9085E293744F50051A571 /* Products */,
+				68D16CB12940ADB100B9F4B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +75,14 @@
 				68B90869293744F50051A571 /* ARSCNViewPOC.xcdatamodeld */,
 			);
 			path = ARSCNViewPOC;
+			sourceTree = "<group>";
+		};
+		68D16CB12940ADB100B9F4B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68D16CB22940ADB100B9F4B0 /* SpriteKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
