@@ -46,16 +46,27 @@ class ViewController: UIViewController {
             sceneView.scene.rootNode.addChildNode(dotNode)
 //        }
         
-        let plane = SCNPlane(width: 0.5, height: 0.5)
+        let positions = self.sceneView.scene.rootNode.convertPosition(dotNode.position, to: dotNode)
+        let projectPoint = self.sceneView.projectPoint(positions)
+        debugPrint("project point \(projectPoint) and it's X,Y,Z = \(projectPoint.x), \(projectPoint.y), \(projectPoint.z)")
+        
+        let plane = SCNPlane(width: 0.2, height: 0.2)
         let planeImage = self.getCustomView(Position: CGPoint(x: 0.0, y: 0.0)).image
         let imageRatio = planeImage.size.height / planeImage.size.width
         debugPrint("imageRatio: \(imageRatio)")
         let desiredPlaneWidth: CGFloat = 1
 //            let plane = SCNPlane(width: desiredPlaneWidth, height: desiredPlaneWidth * imageRatio)
         let planeNode = SCNNode(geometry: plane)
-//            plane.firstMaterial?.diffuse.contents = planeImage
+            plane.firstMaterial?.diffuse.contents = planeImage
 //            planeNode.position = SCNVector3(x: 0.32373372, y: 1.0945587, z: -10.8759274)
-        planeNode.position = SCNVector3(x: 0.0, y: 0.0, z: 0.0)
+//        (x: 183.18898, y: -129.0083, z: 0.9852402)
+//        let newPosition = SCNVector3(x: round(183.18898 * 10000)/10000.0, y: round(-129.0083 * 10000)/10000.0, z: round(0.9852402 * 10000)/10000.0)
+        let newPosition = SCNVector3(x: 0.0914, y: -0.1531, z: 3.0)
+//        planeNode.position = SCNVector3(x: round(0.32373372 * 10000)/10000.0, y: round(0.0945587 * 10000)/10000.0, z: -1.0)
+        planeNode.worldPosition = SCNVector3(SIMD3(x: newPosition.x, y: newPosition.y, z: newPosition.z))
+        planeNode.transform = SCNMatrix4MakeRotation( 0, 1, 0, 0)
+//        planeNode.position = projectPoint
+        
         self.sceneView.scene.rootNode.addChildNode(planeNode)
         
         let node = self.sceneView.scene.rootNode.childNode(withName: "first", recursively: true)
@@ -71,7 +82,8 @@ class ViewController: UIViewController {
             print(scnView)
             
             let cubeNode = SCNNode(geometry: SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0))
-            cubeNode.position = SCNVector3(x: 0.32373372, y: 0.0945587, z: -0.8759274) // SceneKit/AR coordinates are in meters
+//            cubeNode.position = SCNVector3(x: 0.32373372, y: 0.0945587, z: -0.8759274) // SceneKit/AR coordinates are in meters
+            cubeNode.position = SCNVector3(x: 0.0914, y: -0.1531, z: -1.0)
             self.sceneView.scene.rootNode.addChildNode(cubeNode)
             
 //            let plane = SCNPlane(width: 0.2, height: 0.2)
